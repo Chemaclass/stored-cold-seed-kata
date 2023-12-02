@@ -11,7 +11,7 @@ final class StoredColdSeedTest extends TestCase
 {
     public function test_read_first_word(): void
     {
-        $coldSeed = new StoredColdSeed($this->words());
+        $coldSeed = StoredColdSeed::withWords($this->words());
 
         self::assertSame('abandon', $coldSeed->readWord("1"));
     }
