@@ -6,7 +6,7 @@ namespace StoredColdSeedKata;
 
 final class ChangeMe
 {
-    public function readWord(int $binary): string
+    public function readWord(string $binary): string
     {
         return 'Not implemented yet...';
     }
