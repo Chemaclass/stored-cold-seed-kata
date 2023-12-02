@@ -17,20 +17,20 @@ n | binary       | decimal
 3 | ...          | ...
 ```
 
-Example above: 
+Example above:
 - the first word will be in position `602` = "enroll" 
 - the second is in the position `1065` = "lunar"
 - etc
 
 ### 1st iteration
 
-Create a function that given a sequence of 1 and 0 (_which represents the binary number of the position of the word_), the result will be the word associated to that position.
+Create a function that given a binary number, the result will be the word associated to that position.
 
 ```php
-# Proposal code to start... 
+# Proposal code to start...
 final class StoredColdSeed 
 {
-  public function readWord(string $binary): string
+  public function readWord(int $binary): string
   {
     // ...
   }
@@ -38,12 +38,12 @@ final class StoredColdSeed
 ```
 
 ```php 
-readWord("1") == "abandon"
-readWord("10") == "ability"
-readWord("11") == "able"
+readWord(0x000000000001) == "abandon"
+readWord(0x000000000010) == "ability"
+readWord(0x000000000011) == "able"
 ...
-readWord("001001011010") == "enroll"
-readWord("010000101001") == "lunar"
+readWord(0x001001011010) == "enroll"
+readWord(0x010000101001) == "lunar"
 ```
 
 ### 2nd iteration
@@ -51,7 +51,8 @@ readWord("010000101001") == "lunar"
 Allow receiving an array of binary numbers, and the result will be the array with those words.
 
 ```php
-readWords(["001001011010", "010000101001"]) == "enroll lunar"
+# example
+readWords([0x001001011010, 0x010000101001]) == "enroll lunar"
 ```
 
 ---
