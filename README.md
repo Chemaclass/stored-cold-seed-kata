@@ -8,23 +8,40 @@ When you create a new wallet, you are provided with a seed phrase. Losing access
 
 ## Goal
 
-In this kata, instead of storing words, we are going to store the position of the word in the BIP 39 list in binary:
+In this kata, instead of storing words, we are going to store the position in binary of the word in the BIP 39 list:
 
-```
-  2048 | 1024 | 512 | 256 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1
-1)   0      0     1     0     0    1    0    1   1   0   1   0 = 001001011010 = 602
-2)   0      1     0     0     0    0    1    0   1   0   0   1 = 010000101001 = 1065
-3) ...
-^-- word
+```php
+n | binary       | decimal 
+1 | 001001011010 | 602
+2 | 010000101001 | 1065
+3 | ...          | ...
 ```
 
-> Example above: the first word will be in position 602, the second position 1065, etc.
+Example above: 
+- the first word will be in position `602` = "enroll" 
+- the second is in the position `1065` = "lunar"
+- etc
 
 ### 1st iteration
 
-Create a function that given a sequence of 1 and 0, which represents the binary number of the position of the word, and the result will be the word associated to that position.
+Create a function that given a sequence of 1 and 0, which represents the binary number of the position of the word, the result will be the word associated to that position.
 
-```test 
+```php
+# Proposal code to start... 
+final class StoredColdSeed 
+{
+  public function readWord(string $binary): string
+  {
+    // ...
+  }
+}
+```
+
+```php 
+readWord("1") == "abandon"
+readWord("10") == "ability"
+readWord("11") == "able"
+...
 readWord("001001011010") == "enroll"
 readWord("010000101001") == "lunar"
 ```
@@ -33,8 +50,7 @@ readWord("010000101001") == "lunar"
 
 Allow receiving an array of binary numbers, and the result will be the array with those words.
 
-
-```test 
+```php
 readWords(["001001011010", "010000101001"]) == "enroll lunar"
 ```
 
