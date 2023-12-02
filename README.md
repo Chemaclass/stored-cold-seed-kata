@@ -38,12 +38,12 @@ final class StoredColdSeed
 ```
 
 ```php 
-readWord(0x000000000001) == "abandon"
-readWord(0x000000000010) == "ability"
-readWord(0x000000000011) == "able"
+readWord(0b000000000001) == "abandon"
+readWord(0b000000000010) == "ability"
+readWord(0b000000000011) == "able"
 ...
-readWord(0x001001011010) == "enroll"
-readWord(0x010000101001) == "lunar"
+readWord(0b001001011010) == "enroll"
+readWord(0b010000101001) == "lunar"
 ```
 
 ### 2nd iteration
@@ -52,7 +52,7 @@ Allow receiving an array of binary numbers, and the result will be the array wit
 
 ```php
 # example
-readWords([0x001001011010, 0x010000101001]) == "enroll lunar"
+readWords([0b001001011010, 0b010000101001]) == "enroll lunar"
 ```
 
 ---

@@ -13,6 +13,6 @@ final class ChangeMeTest extends TestCase
     {
         $foo = new ChangeMe();
 
-        self::assertSame('Not implemented yet...', $foo->readWord(0x01001));
+        self::assertSame('Not implemented yet...', $foo->readWord(0b01001));
     }
 }
