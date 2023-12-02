@@ -24,7 +24,7 @@ Example above:
 
 ### 1st iteration
 
-Create a function that given a sequence of 1 and 0, which represents the binary number of the position of the word, the result will be the word associated to that position.
+Create a function that given a sequence of 1 and 0 (_which represents the binary number of the position of the word_), the result will be the word associated to that position.
 
 ```php
 # Proposal code to start... 
