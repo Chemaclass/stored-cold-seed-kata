@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace StoredColdSeedKata;
 
-final class ChangeMe
+final class StoredColdSeed
 {
     public function readWord(string $binary): string
     {
