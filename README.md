@@ -1,7 +1,7 @@
 # Stored Cold Seed - TDD Kata
 
 <p align="center">
-  <img alt="Tinyseed.io" src="stored-cold-seed-kata-img.jpg" width="500">
+  <img alt="Tinyseed.io" src="stored-cold-seed-kata-img.jpg" width="550">
 </p>
 
 
@@ -71,4 +71,6 @@ readWord("000000000010") == readWord(0b000000000010) == "ability"
 
 ---
 
-> PRs and other ideas and contributions are welcome! 
+PRs and other ideas and contributions are welcome!
+
+> This is an original kata, idea inspired by [tinyseed](https://tinyseed.io).
