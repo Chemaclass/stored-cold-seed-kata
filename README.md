@@ -1,0 +1,1 @@
+# stored-cold-seed-kata
