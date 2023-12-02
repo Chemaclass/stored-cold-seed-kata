@@ -9,25 +9,26 @@ use StoredColdSeedKata\StoredColdSeed;
 
 final class StoredColdSeedTest extends TestCase
 {
+    private StoredColdSeed $coldSeed;
+
+    protected function setUp(): void
+    {
+        $this->coldSeed = StoredColdSeed::withWords($this->words());
+    }
+
     public function test_read_first_word(): void
     {
-        $coldSeed = StoredColdSeed::withWords($this->words());
-
-        self::assertSame('abandon', $coldSeed->readWord("1"));
+        self::assertSame('abandon', $this->coldSeed->readWord("1"));
     }
 
     public function test_read_second_word(): void
     {
-        $coldSeed = StoredColdSeed::withWords($this->words());
-
-        self::assertSame('ability', $coldSeed->readWord("10"));
+        self::assertSame('ability', $this->coldSeed->readWord("10"));
     }
 
     public function test_read_31th_word(): void
     {
-        $coldSeed = StoredColdSeed::withWords($this->words());
-
-        self::assertSame('adult', $coldSeed->readWord("11111"));
+        self::assertSame('adult', $this->coldSeed->readWord("11111"));
     }
 
     private function words(): string
