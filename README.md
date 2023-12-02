@@ -13,9 +13,9 @@ In this kata, instead of storing words, we are going to store the position of th
 > 
 ```
   2048 | 1024 | 512 | 256 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1
-1    0      0     1     0     0    1    0    1   1   0   1   0 = 001001011010 = 602
-2    0      1     0     0     0    0    1    0   1   0   0   1 = 010000101001 = 1065
-3 ...
+1)   0      0     1     0     0    1    0    1   1   0   1   0 = 001001011010 = 602
+2)   0      1     0     0     0    0    1    0   1   0   0   1 = 010000101001 = 1065
+3) ...
 ^-- word
 ```
 
@@ -38,3 +38,7 @@ Allow receiving an array of binary numbers, and the result will be the array wit
 ```test 
 function2(["001001011010", "010000101001"]) == "enroll lunar"
 ```
+
+<p align="center">
+  <img alt="Tinyseed.io" src="stored-cold-seed-kata-img.jpg">
+</p>
