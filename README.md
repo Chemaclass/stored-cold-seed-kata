@@ -23,8 +23,8 @@ n | binary       | decimal
 ```
 
 Example above:
-- the first word will be in position `602` = "enroll" 
-- the second is in the position `1065` = "lunar"
+- the first word will be in position `602` = "enrich" 
+- the second is in the position `1065` = "lumber"
 - etc
 
 ### 1st iteration
@@ -43,12 +43,12 @@ final class StoredColdSeed
 ```
 
 ```php 
-readWord("000000000001") == "abandon"
-readWord("000000000010") == "ability"
-readWord("000000000011") == "able"
+readWord("000000000000") == "abandon"
+readWord("000000000001") == "ability"
+readWord("000000000010") == "able"
 ...
-readWord("001001011010") == "enroll"
-readWord("010000101001") == "lunar"
+readWord("001001011010") == "enrich"
+readWord("010000101001") == "lumber"
 ```
 
 ### 2nd iteration
@@ -57,7 +57,7 @@ Allow receiving an array of binary numbers, and the result will be the array wit
 
 ```php
 # example
-readWords(["001001011010", "010000101001"]) == "enroll lunar"
+readWords(["001001011010", "010000101001"]) == "enrich lumber"
 ```
 
 ### 3rd iteration
@@ -65,8 +65,8 @@ readWords(["001001011010", "010000101001"]) == "enroll lunar"
 Instead of passing the binary number as string, allow passing it as integer in the same function.
 
 ```php 
-readWord("000000000001") == readWord(0b000000000001) == "abandon"
-readWord("000000000010") == readWord(0b000000000010) == "ability"
+readWord("000000000000") == readWord(0b000000000000) == "abandon"
+readWord("000000000001") == readWord(0b00000000001) == "ability"
 ```
 
 ---
