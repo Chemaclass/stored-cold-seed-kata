@@ -22,4 +22,15 @@ final class StoredColdSeed
 
         return $this->words[$position - 1];
     }
+
+    public function readWords(array $binaries): string
+    {
+        $result = [];
+
+        foreach ($binaries as $binary) {
+            $result [] = $this->readWord($binary);
+        }
+
+        return implode(' ', $result);
+    }
 }
