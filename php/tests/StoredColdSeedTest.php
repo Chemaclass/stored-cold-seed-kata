@@ -23,6 +23,13 @@ final class StoredColdSeedTest extends TestCase
         self::assertSame('ability', $coldSeed->readWord("10"));
     }
 
+    public function test_read_31th_word(): void
+    {
+        $coldSeed = StoredColdSeed::withWords($this->words());
+
+        self::assertSame('adult', $coldSeed->readWord("11111"));
+    }
+
     private function words(): string
     {
         return <<<EOF
