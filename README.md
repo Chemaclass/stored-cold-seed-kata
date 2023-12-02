@@ -10,7 +10,6 @@ When you create a new wallet, you are provided with a seed phrase. Losing access
 
 In this kata, instead of storing words, we are going to store the position of the word in the BIP 39 list in binary:
 
-> 
 ```
   2048 | 1024 | 512 | 256 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1
 1)   0      0     1     0     0    1    0    1   1   0   1   0 = 001001011010 = 602
@@ -19,15 +18,15 @@ In this kata, instead of storing words, we are going to store the position of th
 ^-- word
 ```
 
-Example above: the first word will be in position 602, the second position 1065, etc.
+> Example above: the first word will be in position 602, the second position 1065, etc.
 
 ### 1st iteration
 
 Create a function that given a sequence of 1 and 0, which represents the binary number of the position of the word, and the result will be the word associated to that position.
 
 ```test 
-function1("001001011010") == "enroll"
-function1("010000101001") == "lunar"
+readWord("001001011010") == "enroll"
+readWord("010000101001") == "lunar"
 ```
 
 ### 2nd iteration
@@ -36,8 +35,10 @@ Allow receiving an array of binary numbers, and the result will be the array wit
 
 
 ```test 
-function2(["001001011010", "010000101001"]) == "enroll lunar"
+readWords(["001001011010", "010000101001"]) == "enroll lunar"
 ```
+
+---
 
 <p align="center">
   <img alt="Tinyseed.io" src="stored-cold-seed-kata-img.jpg">
