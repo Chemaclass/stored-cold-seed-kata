@@ -31,6 +31,14 @@ final class StoredColdSeedTest extends TestCase
         self::assertSame('adult', $this->coldSeed->readWord("11111"));
     }
 
+    public function test_read_words(): void
+    {
+        self::assertSame(
+            'abandon ability able about above',
+            $this->coldSeed->readWords(["01", "10", "11", '100', '101'])
+        );
+    }
+
     private function words(): string
     {
         return <<<EOF
