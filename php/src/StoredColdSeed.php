@@ -18,6 +18,8 @@ final class StoredColdSeed
 
     public function readWord(string $binary): string
     {
-        return $this->words[$binary-1];
+        $position = bindec($binary);
+
+        return $this->words[$position - 1];
     }
 }
