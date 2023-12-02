@@ -39,6 +39,11 @@ final class StoredColdSeedTest extends TestCase
         );
     }
 
+    public function test_read_first_word_as_binary_int(): void
+    {
+        self::assertSame('abandon', $this->coldSeed->readWord(0b1));
+    }
+
     private function words(): string
     {
         return <<<EOF
