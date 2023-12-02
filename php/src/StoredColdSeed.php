@@ -16,9 +16,9 @@ final class StoredColdSeed
         return new self(explode(PHP_EOL, $words));
     }
 
-    public function readWord(string $binary): string
+    public function readWord(int|string $binary): string
     {
-        $position = bindec($binary);
+        $position = is_string($binary) ? bindec($binary) : $binary;
 
         return $this->words[$position - 1];
     }
