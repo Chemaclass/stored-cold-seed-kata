@@ -1,7 +1,7 @@
 # Stored Cold Seed - TDD Kata
 
 <p align="center">
-  <img alt="Tinyseed.io" src="stored-cold-seed-kata-img.jpg" width="550">
+  <img alt="Tinyseed.io" src="imgs/stored-cold-seed-kata-img.jpg" width="600">
 </p>
 
 
@@ -26,6 +26,10 @@ Example above:
 - the first word will be in position `602` = "enroll" 
 - the second is in the position `1065` = "lunar"
 - etc
+
+<p align="center">
+  <img alt="Tinyseed.io" src="imgs/stored-cold-seed-kata-example.jpg" width="616">
+</p>
 
 ### 1st iteration
 
