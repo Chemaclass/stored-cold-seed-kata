@@ -1,7 +1,7 @@
 # Stored Cold Seed - TDD Kata
 
 <p align="center">
-  <img alt="Tinyseed.io" src="imgs/stored-cold-seed-kata-img.jpg" width="600">
+  <img alt="Tinyseed.io" src="img/stored-cold-seed-kata-img.jpg" width="600">
 </p>
 
 
@@ -11,29 +11,61 @@ A backup Bitcoin seed wallet, often referred to as a seed phrase or mnemonic phr
 
 When you create a new wallet, you are provided with a seed phrase. Losing access to the seed phrase can result in permanent loss of funds, as it's the only means of recovering your wallet and associated private keys.
 
-## Goal
-
-In this kata, instead of storing words, we are going to store the position in binary of the word in the BIP 39 list:
-
-```php
-n | binary       | decimal 
-1 | 001001011010 | 602
-2 | 010000101001 | 1065
-3 | ...          | ...
-```
-
-Example above:
-- the first word will be in position `602` = "enroll" 
-- the second is in the position `1065` = "lunar"
-- etc
+## Milestone 1: Encrypt
 
 <p align="center">
-  <img alt="Tinyseed.io" src="imgs/stored-cold-seed-kata-example.jpg" width="616">
+  <img alt="Tinyseed.io" src="img/stored-cold-seed-kata-example-encrypt.jpg" width="550">
 </p>
+
+We want to find the position of the word in the [word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt) in binary.
 
 ### 1st iteration
 
-Create a function that given a binary number (as string), the result will be the word associated to that position.
+Create a function that given a word from the [word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt), it will give you the position in the list in binary (as `string`).
+
+```php
+# Proposal code to start...
+final class StoredColdSeed 
+{
+  public function getBinaryPosition(string $word): string
+  {
+    // ...
+  }
+}
+```
+
+Eg:
+```php 
+getBinaryPosition("abandon") == "000000000001"
+getBinaryPosition("ability") == "000000000010"
+getBinaryPosition("able")    == "000000000011"
+...
+getBinaryPosition("enroll")  == "001001011010"
+getBinaryPosition("lunar")   == "010000101001"
+```
+
+### 2nd iteration
+
+Allow receiving an array of words, and the result will be a `string` with the binary positions separated by one space.
+
+Eg:
+```php
+getBinaryPositions(["enroll", "lunar"]) == "001001011010 010000101001"
+```
+
+---
+
+## Milestone 2: Decrypt
+
+<p align="center">
+  <img alt="Tinyseed.io" src="img/stored-cold-seed-kata-example-decrypt.jpg" width="616">
+</p>
+
+We want to get the word (based on the [word list](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)) knowing its binary position in the list:
+
+### 1st iteration
+
+Create a function that given a binary number (as `string`), the result will be the word associated to that position.
 
 ```php
 # Proposal code to start...
@@ -46,6 +78,7 @@ final class StoredColdSeed
 }
 ```
 
+Eg:
 ```php 
 readWord("000000000001") == "abandon"
 readWord("000000000010") == "ability"
@@ -57,7 +90,7 @@ readWord("010000101001") == "lunar"
 
 ### 2nd iteration
 
-Allow receiving an array of binary numbers, and the result will be the array with those words.
+Allow receiving an array of binary numbers, and the result will be a single `string` with those words separated by one space.
 
 ```php
 # example
@@ -66,7 +99,7 @@ readWords(["001001011010", "010000101001"]) == "enroll lunar"
 
 ### 3rd iteration
 
-Instead of passing the binary number as string, allow passing it as integer in the same function.
+Instead of passing the binary number as `string`, allow passing it as `integer` in the same function.
 
 ```php 
 readWord("000000000001") == readWord(0b000000000001) == "abandon"
